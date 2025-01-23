@@ -50,6 +50,7 @@ clear
 Guardar y cerrar el archivo.
 
 ### Configurar permisos de ejecución
+Los comandos listados a continuacion se ejecutan desde el PowerShell:
 
 Para evitar problemas con la configuración de scripts:
 ```powershell
@@ -77,6 +78,7 @@ Install-Module -Name Terminal-Icons -RequiredVersion 0.9.0
 },
 ```
 3. Guardar los cambios y cerrar.
+
 
 ### Activar copiado automático con la selección
 1. Hacer clic derecho en la barra de la consola en un espacio vacío (al lado de los botones de minimizar y cerrar).
