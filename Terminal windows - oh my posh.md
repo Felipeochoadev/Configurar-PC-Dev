@@ -20,10 +20,6 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 
 ## 2. Configurar PowerShell como predeterminado en Windows Terminal
 
-- Abrir Windows Terminal.
-- Acceder a la configuración mediante **Ctrl + ,** o haciendo clic en la flecha desplegable en la barra superior y seleccionando "Configuración".
-- Cambiar el perfil predeterminado a **PowerShell**.
-
 1. Hacer clic derecho en la barra de la consola en un espacio vacío (al lado de los botones de minimizar y cerrar).
 2. Seleccionar "Configuración".
 3. En el menú de configuración, ir a la sección **Inicio**.
