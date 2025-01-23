@@ -10,7 +10,7 @@ Node.js puede instalarse fácilmente utilizando el gestor de paquetes `winget` i
 
 ### **Pasos:**
 
-1. Abre una terminal de Windows (PowerShell o CMD).
+1. Abre la terminal de Windows.
 2. Ejecuta el siguiente comando para instalar Node.js:
 
    ```powershell
