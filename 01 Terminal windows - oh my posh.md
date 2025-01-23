@@ -1,4 +1,7 @@
-# Actualizar Consola de Windows
+# Configuración Profesional de Windows Terminal
+
+Este repositorio contiene la configuración completa y detallada para personalizar y optimizar el entorno de desarrollo en **Windows Terminal**. La configuración está diseñada para maximizar la productividad, mejorar la experiencia visual y facilitar la administración de sistemas y desarrollo de software.
+
 
 ## 1. Descargar e instalar herramientas necesarias
 
