@@ -24,6 +24,13 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 - Acceder a la configuración mediante **Ctrl + ,** o haciendo clic en la flecha desplegable en la barra superior y seleccionando "Configuración".
 - Cambiar el perfil predeterminado a **PowerShell**.
 
+1. Hacer clic derecho en la barra de la consola en un espacio vacío (al lado de los botones de minimizar y cerrar).
+2. Seleccionar "Configuración".
+3. En el menú de configuración, ir a la sección **Inicio**.
+4. En la opcion **Perfil predeterminado** seleccionar de la lista la opción "PowerShell".
+
+NOTA: hay dos opciones similares **Windows PowerShell** no es. Se debe selecionar la que solo dice **PowerShell**
+
 ---
 
 ## 3. Configuración de PowerShell
@@ -52,7 +59,7 @@ Guardar y cerrar el archivo.
 ### Configurar permisos de ejecución
 Los comandos listados a continuacion se ejecutan desde el PowerShell:
 
-Para evitar problemas con la configuración de scripts:
+Para evitar problemas con la configuración de scripts se debe ejecutar como administrador:
 ```powershell
 Set-ExecutionPolicy Unrestricted
 ```
