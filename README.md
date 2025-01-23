@@ -1,28 +1,25 @@
 # Configurar-PC-Dev
 
-Bienvenido a **Configurar-PC-Dev**, un repositorio diseñado para documentar y compartir todo lo necesario para configurar un entorno de desarrollo profesional y funcional. Este repositorio tiene como objetivo centralizar conocimientos y guías que te permitirán preparar tu sistema para trabajar con herramientas de desarrollo, desplegar proyectos y automatizar tareas de manera eficiente.
+Bienvenido a **Configurar-PC-Dev**, un repositorio diseñado para documentar y compartir todo lo necesario para configurar un entorno de desarrollo profesional y funcional. Este repositorio tiene como objetivo centralizar conocimientos y guías que te permitirán preparar tu sistema para trabajar con herramientas de desarrollo, desplegar proyectos de manera eficiente.
 
 ## Propósito del repositorio
 
 El propósito de este repositorio es ofrecer una guía clara y profesional para:
 
-1. Configurar entornos de desarrollo tanto en Windows como en servidores remotos.
-2. Documentar procesos específicos relacionados con backend, frontend, automatización y scripting.
-3. Proporcionar ejemplos estéticos y prácticos alineados con estándares modernos, tomando como referencia estética **felipeochoa.com**.
+1. Configurar entornos de desarrollo en Windows.
+
 
 ---
 
 ## Contenido del repositorio
 
 ### Configuración de herramientas esenciales
-- **Configurar PowerShell de Windows**: Pasos para optimizar tu terminal con personalización y autocompletado.
-- **Configurar GitHub local y en servidor**: Cómo gestionar repositorios localmente y sincronizarlos con GitHub.
+- **Configurar PowerShell de Windows**: Pasos para optimizar tu terminal con personalización.
+- **Configurar GitHub local**: Cómo gestionar repositorios localmente y sincronizarlos con GitHub.
 - **Configuración de Node.js, React, Laravel, y Angular**: Instrucciones para preparar tu entorno y trabajar con estos frameworks.
 - **Instalación y configuración de herramientas clave**:
   - PuTTY
   - Visual Studio Code
-  - FileZilla
-  - Sublime Text
 
 ### Despliegue y servidores
 - **Cómo desplegar un servidor**: Guía para poner en producción aplicaciones sin incluir bases de datos.
@@ -43,6 +40,8 @@ El propósito de este repositorio es ofrecer una guía clara y profesional para:
 ### Extras
 - **Configurar Splicast en el navegador**: Herramienta para ver doble pantalla y mejorar la productividad.
 
+### Github
+- **Configurar GitHub en el servidor**: Cómo gestionar repositorios localmente y sincronizarlos con GitHub.
 ---
 
 ## Estética y organización
