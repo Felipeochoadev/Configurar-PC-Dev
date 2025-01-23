@@ -55,6 +55,7 @@ Guardar y cerrar el archivo.
 ### Configurar permisos de ejecución
 Los comandos listados a continuacion se ejecutan desde el PowerShell:
 
+
 Para evitar problemas con la configuración de scripts se debe ejecutar como administrador:
 ```powershell
 Set-ExecutionPolicy Unrestricted
