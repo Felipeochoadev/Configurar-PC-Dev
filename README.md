@@ -1,6 +1,6 @@
-# Configurar-PC-Dev
+# Configuracion del computador para desarrollar
 
-Bienvenido a **Configurar-PC-Dev**, un repositorio diseñado para documentar y compartir todo lo necesario para configurar un entorno de desarrollo profesional y funcional. Este repositorio tiene como objetivo centralizar conocimientos y guías que te permitirán preparar tu sistema para trabajar con herramientas de desarrollo, desplegar proyectos de manera eficiente.
+Bienvenido, este es un repositorio diseñado para documentar y compartir todo lo necesario para configurar un entorno de desarrollo profesional y funcional. Este repositorio tiene como objetivo centralizar conocimientos y guías que te permitirán preparar tu sistema para trabajar con herramientas de desarrollo, desplegar proyectos de manera eficiente.
 
 ## Propósito del repositorio
 
