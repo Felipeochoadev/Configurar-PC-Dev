@@ -17,7 +17,14 @@ El propósito de este repositorio es ofrecer una guía clara y profesional para:
 - **Configurar PowerShell de Windows**: Pasos para optimizar tu terminal con personalización.
 - **Configurar GitHub local**: Cómo gestionar repositorios localmente y sincronizarlos con GitHub.
 - **Configuración de Node.js**: Instrucciones para preparar tu entorno.
+- **Configuración de React**: Instrucciones para preparar tu entorno.
+- **Configuración de Angular**: Instrucciones para preparar tu entorno.
+- **Configuración de Php**: Instrucciones para preparar tu entorno.
+- **Configuración de Laravel**: Instrucciones para preparar tu entorno.
+- **Configuración de Mysql**: Instrucciones para preparar tu entorno.
+- **Configuración de Postgresql**: Instrucciones para preparar tu entorno.
+- **Configuración de Sqlite**: Instrucciones para preparar tu entorno.
 - **Instalación y configuración de herramientas clave**:
-  - PuTTY
   - Visual Studio Code
+  - PuTTY
   - Filezilla
