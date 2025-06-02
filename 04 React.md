@@ -164,3 +164,78 @@ MiProyecto/
 
 ```
 
+# Pruebas Unitarias con Vitest y React
+
+## Instalación y configuración
+
+Instala Vitest como dependencia de desarrollo:
+
+```bash
+npm install -D vitest
+
+```
+
+Luego, agrega la configuración de entorno en tu archivo vite.config.js (debajo de plugins):
+
+```javascript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  test: { // Configura el entorno para pruebas con DOM
+    environment: 'jsdom', 
+  },
+});
+
+```
+
+Asegúrate también de tener instalado jsdom:
+
+```bash
+npm install -D jsdom
+
+```
+
+## Crear el archivo de prueba
+
+Crea un archivo de prueba en src/App.test.jsx con el siguiente contenido el vitest busca todo los archivos que contengan el nombre test para hacer la prueba unitaria: 
+
+```jsx
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import App from './App';
+
+describe('Componente App', () => {
+  it('muestra el título principal', () => {
+    render(<App />);
+    const heading = screen.getByText(/Vite \+ React/i);
+    expect(heading).to.exist;
+  });
+});
+
+```
+
+## Ejecutar las pruebas
+
+```bash
+npx vitest
+
+```
+Esto lanzará Vitest y ejecutará tus pruebas en entorno jsdom
+
+
+## **Para compilar la aplicación (modo producción)**
+
+```powershell
+npm run build
+
+```
+
+
+## **Para servir la app compilada**
+
+```powershell
+npm run preview
+
+```
