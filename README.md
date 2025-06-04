@@ -66,20 +66,23 @@ Dentro de cada subcarpeta (`angular`, `laravel`, `php`, `react`), los proyectos 
 
 Para facilitar la identificación y la asociación con la tecnología correspondiente, los nombres de las carpetas de los proyectos seguirán una convención clara, por ejemplo, para proyectos de React:
 
+
+```
 react-curso-02-triqui
 react-landing-01
 react-page-01
 react-backoffice-01
 
+```
+
 
 ```less
-> 📁 Cada carpeta representa un proyecto independiente, y se recomienda que el nombre incluya:
-> - La tecnología (ej. `react`, `laravel`, etc.)
-> - Un tipo (ej. `curso`, `landing`, `page`, `backoffice`)
-> - Un número de secuencia (`01`, `02`, etc.)
-> - Un nombre descriptivo breve si es necesario (`triqui`, `admin`, `formulario`, etc.)
-
-Esta convención mejora la claridad, facilita la navegación entre múltiples proyectos y permite trabajar con distintos repositorios Git sin conflictos.
-
+📁 Cada carpeta representa un proyecto independiente, y se recomienda que el nombre incluya:
+> La tecnología (ej. `react`, `laravel`, etc.)
+> Un tipo (ej. `curso`, `landing`, `page`, `backoffice`)
+> Un número de secuencia (`01`, `02`, etc.)
+> Un nombre descriptivo breve si es necesario (`triqui`, `admin`, `formulario`, etc.)
 
 ```
+
+Esta convención mejora la claridad, facilita la navegación entre múltiples proyectos y permite trabajar con distintos repositorios Git sin conflictos.
