@@ -60,3 +60,55 @@ Verifica que PHP cargue sqlite correctamente:
 php -m | findstr sqlite3
 
 ```
+
+## **Abrir Base de datos desde la consola**
+
+Navegamos a la ruta donde esta base de datos SQLite
+
+```powershell
+cd /var/www/php/PruebaTecnica
+
+```
+
+Abrimos el .db desde la consola para ver la base de datos
+
+```powershell
+sqlite3 events.db
+
+```
+
+Verás el prompt de SQLite:
+```powershell
+SQLite version 3.x.x ...
+Enter ".help" for usage hints.
+sqlite>
+
+```
+
+## **Ver tablas y datos**
+
+Ver todas las tablas
+```sql
+.tables
+
+```
+
+Ver la estructura de la tabla events
+```sql
+.schema events
+
+```
+
+Ver todos los registros:
+```sql
+SELECT * FROM events;
+
+```
+
+Salir de SQLite:
+```sql
+.exit
+
+```
+
+Si estás en ...> (prompt de continuación), termina con ; y enter
