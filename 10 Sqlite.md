@@ -20,6 +20,7 @@ Deberías ver:
 Loaded Configuration File: C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.4_Microsoft.Winget.Source_8wekyb3d8bbwe\php.ini
 
 ```
+> ⚠️ **Nota**: si la ruta de configuracion esta vacia o dice none realice los pasos del instructivo de `PHP`.
 
 Navegamos a la carpeta de instalacion
 
