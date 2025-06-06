@@ -92,12 +92,33 @@ copy php.ini-development php.ini
 
 ```
 
-Para editar el php.ini abrimos el archivo .ini recuerda que debemos estar ubicados en la carpeta del php
+Configuramos el .ini para habilitar las extensiones
+
+Para editar el php.ini abrimos el archivo .ini
 
 ```powershell
 code php.ini
 
 ```
+
+Busca las siguientes líneas y quita el ; al inicio para habilitarlas:
+
+```powershell
+; On windows:
+;extension_dir = "ext"
+
+```
+
+Quedan asi:
+
+```powershell
+; On windows:
+extension_dir = "ext"
+
+```
+
+Guarda y cierra.
+
 
 Verifica que PHP cargue el archivo de configuración:
 

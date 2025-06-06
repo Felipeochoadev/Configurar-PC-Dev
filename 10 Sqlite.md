@@ -1,46 +1,61 @@
 # Configuración de sqlite en Windows
 
+Este documento describe cómo habilitar la extensión SQLite3 
+
+---
 
 
-ini
-Copiar
-Editar
-;extension=sqlite3
-y quita el ; para que quede:
+## 1. Ir a la carpeta de instalación de PHP
 
-ini
-Copiar
-Editar
-extension=sqlite3
-Guarda y cierra.
-
-Verifica que PHP cargue el archivo de configuración:
-
-powershell
-Copiar
-Editar
-php --ini
-Deberías ver:
-
-mathematica
-Copiar
-Editar
-Loaded Configuration File: C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.4_Microsoft.Winget.Source_8wekyb3d8bbwe\php.ini
-Verifica que la extensión esté habilitada:
-
-powershell
-Copiar
-Editar
-php -m | findstr sqlite3
-
-
-
-
-Cuando está disponible una nueva versión de parche de una versión de PHP ya instalada, winget updatela muestra.
-
-Ejecutar winget update PHP.PHP.%version%para actualizar a la última versión del parche para esa versión. Por ejemplo, para actualizar PHP 8.4 a la última versión, ejecutar:
+Verifica la ruta de configuración:
 
 ```powershell
-winget update PHP.PHP.8.4
+php --ini
+
+```
+
+Deberías ver:
+
+```powershell
+Loaded Configuration File: C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.4_Microsoft.Winget.Source_8wekyb3d8bbwe\php.ini
+
+```
+
+Navegamos a la carpeta de instalacion
+
+```powershell
+cd C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.4_Microsoft.Winget.Source_8wekyb3d8bbwe
+
+```
+
+Para editar el php.ini abrimos el archivo .ini
+
+```powershell
+code php.ini
+
+```
+
+Busca las siguientes líneas y quita el ; al inicio para habilitarlas:
+
+```powershell
+;extension=sqlite3
+;extension=pdo_sqlite
+
+```
+
+Quedan asi:
+
+```powershell
+extension=sqlite3
+extension=pdo_sqlite
+
+```
+
+Guarda y cierra.
+
+Verifica que PHP cargue sqlite correctamente:
+
+```powershell
+php -m | findstr sqlite3
 
 ```
