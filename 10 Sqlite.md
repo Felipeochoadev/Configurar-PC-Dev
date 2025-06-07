@@ -38,7 +38,7 @@ code php.ini
 
 Busca las siguientes líneas y quita el ; al inicio para habilitarlas:
 
-```powershell
+```ini
 ;extension=sqlite3
 ;extension=pdo_sqlite
 
@@ -46,7 +46,7 @@ Busca las siguientes líneas y quita el ; al inicio para habilitarlas:
 
 Quedan asi:
 
-```powershell
+```ini
 extension=sqlite3
 extension=pdo_sqlite
 

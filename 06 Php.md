@@ -92,7 +92,7 @@ copy php.ini-development php.ini
 
 ```
 
-Configuramos el .ini para habilitar las extensiones
+Configuramos el .ini
 
 Para editar el php.ini abrimos el archivo .ini
 
@@ -101,9 +101,9 @@ code php.ini
 
 ```
 
-Busca las siguientes líneas y quita el ; al inicio para habilitarlas:
+Habilitar extensiones, Busca las siguientes líneas y quita el ; al inicio para habilitarlas:
 
-```powershell
+```ini
 ; On windows:
 ;extension_dir = "ext"
 
@@ -111,13 +111,42 @@ Busca las siguientes líneas y quita el ; al inicio para habilitarlas:
 
 Quedan asi:
 
-```powershell
+```ini
 ; On windows:
 extension_dir = "ext"
 
 ```
 
+Habilitar error_log, Busca las siguientes líneas y quita el ; al inicio para habilitarlas y agregamos la ruta del log:
+
+```ini
+;error_log = php_errors.log
+
+```
+
+Quedan asi:
+
+```ini
+error_log = C:\var\www\php\php_error.log
+
+```
+
+Verifica que esta línea esté así:
+
+```ini
+log_errors = On
+
+```
+
 Guarda y cierra.
+
+Reinicia sesión PHP
+
+Monitorea el archivo de errores en tiempo real
+```powershell
+Get-Content "C:\var\www\php\php_error.log" -Wait
+
+```
 
 
 Verifica que PHP cargue el archivo de configuración:
