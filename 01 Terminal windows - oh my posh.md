@@ -97,3 +97,9 @@ Install-Module -Name Terminal-Icons -RequiredVersion 0.9.0
 
 ## 5. Reiniciar la consola
 Reiniciar Windows Terminal para aplicar todos los cambios.
+
+## 6. Agregar titulo a cada pestaña
+```powershell
+$host.UI.RawUI.WindowTitle = "Error Log"
+
+```
