@@ -51,7 +51,7 @@ Abre PowerShell como administrador y ejecuta el siguiente comando:
 
 ```powershell
 mkdir C:\var\www
-mkdir C:\var\www\angular, C:\var\www\laravel, C:\var\www\php, C:\var\www\react
+mkdir C:\var\www\angular, C:\var\www\laravel, C:\var\www\php, C:\var\www\react, C:\var\www\docusaurus
 
 ```
 
