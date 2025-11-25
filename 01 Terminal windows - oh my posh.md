@@ -43,8 +43,102 @@ notepad $PROFILE
 
 Si no tienes el archivo, crearlo con:
 ```powershell
+New-Item -Path "$env:LOCALAPPDATA\Programs\oh-my-posh\themes" -ItemType Directory -Force
+
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cobalt2.omp.json" -OutFile "$env:LOCALAPPDATA\Programs\oh-my-posh\themes\cobalt2.omp.json"
+
+$baseUrl = "https://github.com/romkatv/powerlevel10k-media/raw/master/"
+
+$fonts = @(
+    "MesloLGS%20NF%20Regular.ttf",
+    "MesloLGS%20NF%20Bold.ttf",
+    "MesloLGS%20NF%20Italic.ttf",
+    "MesloLGS%20NF%20Bold%20Italic.ttf"
+)
+
+$tempDir = "$env:TEMP\NerdFonts"
+New-Item -Path $tempDir -ItemType Directory -Force
+
+Write-Host "Descargando fuentes..."
+foreach ($font in $fonts) {
+    $url = $baseUrl + $font
+    $path = Join-Path $tempDir ($font -replace '%20', ' ')
+    Invoke-WebRequest -Uri $url -OutFile $path
+    Write-Host "Descargado: $($font -replace '%20', ' ')"
+}
+
+$fontDir = "$env:WINDIR\Fonts"
+
+Write-Host "Copiando fuentes al sistema..."
+Copy-Item -Path "$tempDir\*.ttf" -Destination $fontDir -Force
+
+Remove-Item -Path $tempDir -Recurse -Force
+
 New-Item -Path $PROFILE -Type File -Force
 ```
+
+¡Excelente pregunta! Es mucho más eficiente instalar la fuente directamente con comandos, especialmente en sistemas optimizados.
+
+Aunque la instalación tradicional requiere usar la interfaz gráfica (doble clic), podemos usar comandos de PowerShell para descargar el archivo de la fuente y luego usar un comando del sistema para registrarla.
+
+Aquí está el proceso completo en comandos de PowerShell:
+
+1. Preparar y Descargar la Fuente (MesloLGS NF)
+Este bloque de comandos descargará los cuatro archivos de la fuente y los guardará en tu carpeta temporal para la instalación:
+
+PowerShell
+
+# 1. Definir la URL base de la fuente
+$baseUrl = "https://github.com/romkatv/powerlevel10k-media/raw/master/"
+
+# 2. Definir los nombres de los archivos
+$fonts = @(
+    "MesloLGS%20NF%20Regular.ttf",
+    "MesloLGS%20NF%20Bold.ttf",
+    "MesloLGS%20NF%20Italic.ttf",
+    "MesloLGS%20NF%20Bold%20Italic.ttf"
+)
+
+# 3. Definir la carpeta de destino temporal
+$tempDir = "$env:TEMP\NerdFonts"
+New-Item -Path $tempDir -ItemType Directory -Force
+
+# 4. Descargar las fuentes
+Write-Host "Descargando fuentes..."
+foreach ($font in $fonts) {
+    $url = $baseUrl + $font
+    $path = Join-Path $tempDir ($font -replace '%20', ' ')
+    Invoke-WebRequest -Uri $url -OutFile $path
+    Write-Host "Descargado: $($font -replace '%20', ' ')"
+}
+2. Instalar y Registrar la Fuente
+Windows no tiene un comando de PowerShell nativo para instalar fuentes en el registro del sistema de manera directa, pero podemos automatizar el proceso de copia al directorio de fuentes y registro:
+
+PowerShell
+
+# 5. Definir la carpeta de Fuentes del Sistema
+$fontDir = "$env:WINDIR\Fonts"
+
+# 6. Copiar los archivos a la carpeta de fuentes del sistema
+Write-Host "Copiando fuentes al sistema..."
+Copy-Item -Path "$tempDir\*.ttf" -Destination $fontDir -Force
+
+# 7. (Opcional) Limpiar la carpeta temporal
+Remove-Item -Path $tempDir -Recurse -Force
+Paso Final: Configurar la Terminal
+La instalación por comandos solo pone la fuente en el sistema, pero no puede cambiar la configuración de la ventana de PowerShell. Debes hacer este paso manualmente una vez:
+
+Abre tu ventana de PowerShell.
+
+Haz clic derecho en la barra de título de la ventana (arriba).
+
+Selecciona Propiedades.
+
+Ve a la pestaña Fuente.
+
+En la lista, busca y selecciona "MesloLGS NF".
+
+Haz clic en Aceptar.
 
 En el Bloc de notas que se abre, pegar el siguiente contenido:
 ```powershell
