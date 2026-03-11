@@ -244,3 +244,25 @@ composer --version
 ```
 Deberías ver una salida similar a:
 Composer version 2.x.x 202X-XX-XX ...
+
+## **Comandos útiles de Composer**
+
+A continuación, se describen los comandos más utilizados para gestionar dependencias en proyectos PHP:
+
+| Comando | Descripción |
+| :--- | :--- |
+| `composer init` | Crea un archivo `composer.json` interactivo para un nuevo proyecto. |
+| `composer install` | Instala las dependencias definidas en el archivo `composer.lock` o `composer.json`. |
+| `composer update` | Actualiza todas las librerías a la última versión permitida según las restricciones del archivo. |
+| `composer require <paquete>` | Descarga e instala una nueva librería al proyecto (ej. `composer require vlucas/phpdotenv`). |
+| `composer self-update` | Actualiza la herramienta Composer a su versión más reciente disponible. |
+| `composer dump-autoload` | Regenera la lista de todas las clases que necesitan ser incluidas en el proyecto (optimiza el autoload). |
+
+---
+
+### **Ejemplo rápido de uso**
+Si estás iniciando un módulo para **NexumTec**, los pasos serían:
+
+1. **Navegar al proyecto:** `cd C:\var\www\php\NexumTec`
+2. **Inicializar:** `composer init`
+3. **Instalar una dependencia:** `composer require monolog/monolog` (para registro de logs profesionales).
