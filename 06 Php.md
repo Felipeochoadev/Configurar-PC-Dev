@@ -133,7 +133,7 @@ Habilitar error_log, Busca las siguientes líneas y quita el ; al inicio para ha
 Quedan asi:
 
 ```ini
-error_log = C:\var\www\php\php_error.log
+error_log = "C:\var\www\php\php_error.log"
 
 ```
 
