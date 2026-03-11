@@ -25,11 +25,11 @@ winget search PHP.PHP
 Si bien el comando winget downloadwinget install solo descarga una versión determinada de PHP, el comando descarga una compilación de PHP de Windows, la verifica, la extrae y actualiza la variable PATH del sistema para que esté phpdisponible para ejecutarse desde la línea de comandos.
 
 ```powershell
-winget install PHP.PHP.8.4
+winget install PHP.PHP.8.5
 
 ```
 
-`winget install PHP.PHP.8.4` instala PHP en el sistema como una aplicación portátil y actualiza la variable `PATH` en el sistema
+`winget install PHP.PHP.8.5` instala PHP en el sistema como una aplicación portátil y actualiza la variable `PATH` en el sistema
 
 Reiniciar la consola y verifica su instalación con:
 
@@ -41,7 +41,7 @@ php -v
 ## Actualizar paquetes PHP**
 Cuando está disponible una nueva versión de parche de una versión de PHP ya instalada, winget updatela muestra.
 
-Ejecutar winget update PHP.PHP.%version%para actualizar a la última versión del parche para esa versión. Por ejemplo, para actualizar PHP 8.4 a la última versión, ejecutar:
+Ejecutar winget update PHP.PHP.%version%para actualizar a la última versión del parche para esa versión. Por ejemplo, para actualizar PHP 8.5 a la última versión, ejecutar:
 
 ```powershell
 winget update PHP.PHP.8.5
@@ -106,6 +106,9 @@ Habilitar extensiones, Busca las siguientes líneas y quita el ; al inicio para 
 ```ini
 ; On windows:
 ;extension_dir = "ext"
+;extension=openssl
+;extension=sockets
+;extension=zip
 
 ```
 
@@ -114,6 +117,9 @@ Quedan asi:
 ```ini
 ; On windows:
 extension_dir = "ext"
+extension=openssl
+extension=sockets
+extension=zip
 
 ```
 
