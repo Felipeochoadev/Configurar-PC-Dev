@@ -109,6 +109,9 @@ Habilitar extensiones, Busca las siguientes líneas y quita el ; al inicio para 
 ;extension=openssl
 ;extension=sockets
 ;extension=zip
+;extension=pgsql
+;extension=pdo_pgsql
+;extension=pdo_mysql
 
 ```
 
@@ -120,6 +123,9 @@ extension_dir = "ext"
 extension=openssl
 extension=sockets
 extension=zip
+extension=pgsql
+extension=pdo_pgsql
+extension=pdo_mysql
 
 ```
 
