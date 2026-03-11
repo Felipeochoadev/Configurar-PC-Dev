@@ -44,7 +44,7 @@ Cuando está disponible una nueva versión de parche de una versión de PHP ya i
 Ejecutar winget update PHP.PHP.%version%para actualizar a la última versión del parche para esa versión. Por ejemplo, para actualizar PHP 8.4 a la última versión, ejecutar:
 
 ```powershell
-winget update PHP.PHP.8.4
+winget update PHP.PHP.8.5
 
 ```
 
@@ -183,3 +183,64 @@ si queremos inicializar un .php diferente al index.php usamos el siguiente coman
 php -S localhost:8000 nombre.php
 
 ```
+
+# Descargar el instalador de Composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+## Ejecutar la instalación global
+## Esto genera el archivo composer.phar en el directorio actual
+php composer-setup.php
+
+## Eliminar el instalador
+php -r "unlink('composer-setup.php');"
+
+
+# Configurar Composer como comando globa
+Para que puedas escribir simplemente composer en cualquier carpeta, vamos a moverlo a la carpeta de PHP que ya tienes en el PATH.
+
+## 1. Mover el archivo a la carpeta de PHP:
+(Usa la ruta que encontraste anteriormente con Get-ChildItem)
+
+```PowerShell
+Move-Item "composer.phar" "C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.5_Microsoft.Winget.Source_8wekyb3d8bbwe\composer.phar"
+
+```
+
+## 2. Crear el acceso directo (Batch script):
+Esto permite que Windows reconozca el comando sin necesidad de escribir la extensión .phar.
+
+```PowerShell
+$phpPath = "C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.5_Microsoft.Winget.Source_8wekyb3d8bbwe"
+Set-Content -Path "$phpPath\composer.bat" -Value "@php `"%~dp0composer.phar`" %*"
+
+```
+
+## Habilitar extensiones requeridas por Composer
+Composer requiere que openssl, curl y mbstring estén activos en tu php.ini. Abre tu archivo de configuración:
+
+```PowerShell
+code $phpPath\php.ini
+
+```
+
+Busca y quita el ; (punto y coma) de las siguientes líneas:
+
+```Ini
+extension=curl
+extension=mbstring
+extension=openssl
+; Opcional pero recomendado para frameworks como Laravel o Symfony:
+extension=intl
+
+```
+
+Verificar la instalación
+Reinicia tu terminal y ejecuta:
+
+
+```PowerShell
+composer --version
+
+```
+Deberías ver una salida similar a:
+Composer version 2.x.x 202X-XX-XX ...
