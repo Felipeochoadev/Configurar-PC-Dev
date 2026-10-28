@@ -86,3 +86,66 @@ react-backoffice-01
 ```
 
 Esta convención mejora la claridad, facilita la navegación entre múltiples proyectos y permite trabajar con distintos repositorios Git sin conflictos.
+
+
+esto hacer en el servidor en putty para formatear el log
+
+```powershell
+cat << 'EOF' > /usr/local/bin/verlogs
+#!/usr/bin/env bash
+
+LINES=${1:-50}
+
+docker exec -i felipeochoa_backend tail -f -n "$LINES" /var/www/html/log/errores.log | python3 -c '
+import sys, re, json
+
+C_RESET = "\033[0m"
+C_CYAN  = "\033[36m"
+C_YEL   = "\033[33m"
+C_GREEN = "\033[32m"
+
+def format_json(match):
+    raw = match.group(0)
+    try:
+        data = json.loads(raw)
+        if isinstance(data, dict) and "respuesta" in data and isinstance(data["respuesta"], str):
+            try:
+                data["respuesta"] = json.loads(data["respuesta"])
+            except Exception:
+                pass
+        pretty = json.dumps(data, indent=2, ensure_ascii=False)
+        return f"\n{C_GREEN}{pretty}{C_RESET}\n"
+    except Exception:
+        return raw
+
+first_entry = True
+for line in sys.stdin:
+    # Si la línea empieza con timestamp de log
+    m = re.match(r"^(\[\d{2}-[A-Za-z]+-\d{4} [^\]]+\])\s*(\[[a-zA-Z0-9_.-]+:\d+\])?\s*(.*)", line, re.DOTALL)
+    if m:
+        timestamp, script_line, rest = m.group(1), m.group(2), m.group(3)
+        
+        # Salto de línea separador entre logs
+        if not first_entry:
+            sys.stdout.write("\n")
+        first_entry = False
+
+        # Línea 1: Timestamp
+        sys.stdout.write(f"{C_CYAN}{timestamp}{C_RESET}\n")
+
+        # Línea 2: [archivo:linea] (si existe)
+        if script_line:
+            sys.stdout.write(f"{C_YEL}{script_line}{C_RESET}\n")
+
+        line = rest
+
+    # Expandir saltos de línea y formatear JSON sin colores rojos
+    line = line.replace("\\n", "\n  ")
+    line = re.sub(r"\{[\s\S]*\}", format_json, line)
+    print(line, end="", flush=True)
+'
+EOF
+chmod +x /usr/local/bin/verlogs
+```
+
+Resultado al ejecutar verlogs:
